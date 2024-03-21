@@ -1,0 +1,35 @@
+Seg 1:
+
+Please make sure you have the correct access rights
+and the repository exists.
+saty@Satyarths-MacBook-Air productService % eval "$(ssh-agent -s)"
+Agent pid 1941
+saty@Satyarths-MacBook-Air productService % ssh-add -l -E sha256
+The agent has no identities.
+saty@Satyarths-MacBook-Air productService %     git push --set-upstream origin master
+
+saty@Satyarths-MacBook-Air productService % chmod 700 ~/.ssh
+saty@Satyarths-MacBook-Air productService % chmod 600 ~/.ssh/id_rsa
+
+saty@Satyarths-MacBook-Air productService % git remote set-url origin git@github.com:Saty333/ProjectCapstone.git
+saty@Satyarths-MacBook-Air productService % git push -u origin master
+Enumerating objects: 27, done.
+Counting objects: 100% (27/27), done.
+Delta compression using up to 8 threads
+Compressing objects: 100% (17/17), done.
+Writing objects: 100% (27/27), 64.01 KiB | 16.00 MiB/s, done.
+Total 27 (delta 0), reused 0 (delta 0), pack-reused 0
+To github.com:Saty333/ProjectCapstone.git
+ * [new branch]      master -> master
+branch 'master' set up to track 'origin/master'.
+saty@Satyarths-MacBook-Air productService %
+
+
+
+
+
+
+
+
+
+Seg 2: create a new rsa pubId and add it to github
