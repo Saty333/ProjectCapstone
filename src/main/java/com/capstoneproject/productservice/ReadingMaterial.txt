@@ -5,3 +5,9 @@ https://spring.io/guides/gs/rest-service/
 
 
 Lecture07
+https://docs.google.com/document/d/1ZlyaLt7-KM0Wnz_e9h05MDxzWfKxk3xFkJVy5MnUXGY/edit
+https://learn.microsoft.com/en-us/azure/architecture/best-practices/api-design
+
+Lecture08
+https://www.baeldung.com/rest-template
+https://fakestoreapi.com/docs
