@@ -4,9 +4,11 @@ import com.capstoneproject.productservice.dtos.FakeStoreProductDto;
 import com.capstoneproject.productservice.models.Category;
 import com.capstoneproject.productservice.models.Product;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.boot.web.client.RestTemplateBuilder;
 import org.springframework.stereotype.Service;
 import org.springframework.web.client.RestTemplate;
+
+import java.util.ArrayList;
+import java.util.List;
 
 @Service
 //@Service annotation tells Spring that it is an important class
@@ -25,7 +27,9 @@ public class FakeStoreProductService implements ProductService{
 //        you will get response in for of dataType FakeStoreProductDto
 //        <B1>
         FakeStoreProductDto productDto = restTemplate.getForObject(
+//                Below line tells that this url should be called for API
                 "https://fakestoreapi.com/products/" + id,
+//                Below line tells that object will be of data type FakeStoreProductDto. (FakeStoreProductDto is a class)
                 FakeStoreProductDto.class
         );
 //        </B1>
@@ -34,6 +38,26 @@ public class FakeStoreProductService implements ProductService{
 //        So we will write a function to convert the response in desired format.
         return convertFakeStoreProductToProduct(productDto);
 
+    }
+
+    public List<Product> getAllProducts(){
+        FakeStoreProductDto[] productDto = restTemplate.getForObject(
+                "https://fakestoreapi.com/products",
+                FakeStoreProductDto[].class
+        );
+        return convertFakeStoreProductListToProductList(productDto);
+    }
+
+    private List<Product> convertFakeStoreProductListToProductList(FakeStoreProductDto[] dto){
+        List<Product> products = new ArrayList<>();
+
+        // Iterate over each FakeStoreProductDto object in the list
+        for (FakeStoreProductDto fakeStoreProductDto : dto) {
+            // Call the conversion function and add the returned Product object to the list
+            Product product = convertFakeStoreProductToProduct(fakeStoreProductDto);
+            products.add(product);
+        }
+        return products;
     }
     private Product convertFakeStoreProductToProduct(FakeStoreProductDto dto){
         Product product = new Product();

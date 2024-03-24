@@ -22,7 +22,7 @@ public class ProductController {
 //    API 1 (GET): getAllProducts
     @GetMapping
     public List<Product> getAllProducts(){
-        return new ArrayList<>();
+        return productService.getAllProducts();
     }
 
 //    API 2 (GET): getSingleProduct
