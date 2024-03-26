@@ -19,6 +19,7 @@ public class ProductController {
         this.productService = productService;
     }
 
+
 //    API 1 (GET): getAllProducts
     @GetMapping
     public List<Product> getAllProducts(){
