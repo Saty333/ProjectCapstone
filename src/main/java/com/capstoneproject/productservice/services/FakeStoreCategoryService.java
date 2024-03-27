@@ -23,7 +23,6 @@ public class FakeStoreCategoryService implements CategoryService{
                 "https://fakestoreapi.com/products/categories",
                 List.class
         );
-
         return allCategories;
     }
 
