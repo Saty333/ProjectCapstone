@@ -23,6 +23,7 @@ public class ProductController {
 //    API 1 (GET): getAllProducts
     @GetMapping
     public List<Product> getAllProducts(){
+
         return productService.getAllProducts();
     }
 
