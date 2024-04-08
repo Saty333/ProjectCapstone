@@ -26,10 +26,10 @@ public class FakeStoreCategoryService implements CategoryService{
         return allCategories;
     }
 
-    private List<String> convertFakeStoreCategoryToListOfCategory(List<String> str){
-        for(FakeStoreCategoryDto dto:str){
-
-
-        }
-    }
+//    private List<String> convertFakeStoreCategoryToListOfCategory(List<String> str){
+//        for(FakeStoreCategoryDto dto:str){
+//
+//
+//        }
+//    }
 }
